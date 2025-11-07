@@ -22,7 +22,9 @@ module.exports = createCoreController('api::journal.journal',({ strapi }) => ({
                     card_image:{
                         fields: ['id', 'url'],
                     },
-
+                    images:{
+                        fields: ['id', 'url'],
+                    },
                 },
             },
         });
