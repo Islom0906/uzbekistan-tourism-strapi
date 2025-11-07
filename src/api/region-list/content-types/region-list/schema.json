@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "region_lists",
+  "info": {
+    "singularName": "region-list",
+    "pluralName": "region-lists",
+    "displayName": "Region list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::region.region",
+      "mappedBy": "region_list"
+    },
+    "maps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::map.map",
+      "mappedBy": "region_list"
+    }
+  }
+}

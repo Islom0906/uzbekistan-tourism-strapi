@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partner_logos",
+  "info": {
+    "singularName": "partner-logo",
+    "pluralName": "partner-logos",
+    "displayName": "Partner-logo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
