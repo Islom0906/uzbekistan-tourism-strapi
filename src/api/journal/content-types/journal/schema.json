@@ -89,6 +89,15 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "year": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
     }
   }
 }

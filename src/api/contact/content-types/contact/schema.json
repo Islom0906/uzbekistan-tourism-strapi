@@ -68,6 +68,16 @@
         }
       },
       "required": true
+    },
+    "phone": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "unique": false
     }
   }
 }

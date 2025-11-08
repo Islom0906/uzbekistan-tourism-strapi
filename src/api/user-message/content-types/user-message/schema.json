@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_messages",
+  "info": {
+    "singularName": "user-message",
+    "pluralName": "user-messages",
+    "displayName": "User message "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": false
+    },
+    "media_kit": {
+      "type": "string"
+    }
+  }
+}
