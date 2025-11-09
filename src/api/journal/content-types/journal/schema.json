@@ -65,7 +65,7 @@
         "audios"
       ]
     },
-    "images": {
+    "images_en": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -98,6 +98,19 @@
         }
       },
       "required": true
+    },
+    "images_uz": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
