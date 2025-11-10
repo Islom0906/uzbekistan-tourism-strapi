@@ -769,7 +769,7 @@ export interface ApiJournalJournal extends Struct.CollectionTypeSchema {
     images_uz: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
