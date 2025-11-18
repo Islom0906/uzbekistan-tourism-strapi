@@ -903,6 +903,13 @@ export interface ApiMediaKitMediaKit extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::media-kit.media-kit'
     >;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     price: Schema.Attribute.BigInteger &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
