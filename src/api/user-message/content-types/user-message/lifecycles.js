@@ -12,10 +12,12 @@ module.exports={
             const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
             const chatId = process.env.TELEGRAM_CHAT_ID;
 
-            const text = `New message received:\n
-            Name: ${result.name}\n
-            Telephone: ${result.phone}\n
-            Message: ${result.text}
+            const text = `📩 New message received:\n
+👤 Name: ${result.name}\n
+📞Telephone: ${result.phone}\n
+💬Message: ${result.text}\n
+
+🕒 Time: ${new Date().toLocaleString()}
             `;
 
 
