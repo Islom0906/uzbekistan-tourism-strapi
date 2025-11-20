@@ -7,7 +7,7 @@
     "displayName": "User message "
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

@@ -1256,7 +1256,7 @@ export interface ApiUserMessageUserMessage extends Struct.CollectionTypeSchema {
     singularName: 'user-message';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
