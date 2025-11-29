@@ -12,7 +12,7 @@ module.exports={
             const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
             const chatId = process.env.TELEGRAM_CHAT_ID;
 
-            const text = `📩 New message received:\n
+            const text = `📩 New message received regarding media kit :\n
 👤 Name: ${result.name}\n
 📞Telephone: ${result.phone}\n
 💬Message: ${result.text}\n
