@@ -14,6 +14,7 @@ module.exports = createCoreController('api::journal.journal',({ strapi }) => ({
                 ...ctx.query,
                 sort: ctx.query.sort || ['createdAt:desc'],
                 populate: {
+
                     pdf_ru: {
                         fields: ['id', 'url','mime'],
                     },

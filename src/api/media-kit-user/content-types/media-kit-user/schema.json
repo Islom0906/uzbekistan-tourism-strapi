@@ -1,13 +1,13 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_messages",
+  "collectionName": "media_kit_users",
   "info": {
-    "singularName": "user-message",
-    "pluralName": "user-messages",
-    "displayName": "User message "
+    "singularName": "media-kit-user",
+    "pluralName": "media-kit-users",
+    "displayName": "Media kit user"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -22,6 +22,9 @@
     "text": {
       "type": "text",
       "required": false
+    },
+    "media_kit": {
+      "type": "string"
     }
   }
 }

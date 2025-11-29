@@ -819,6 +819,58 @@ export interface ApiJournalJournal extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLegislationLegislation extends Struct.CollectionTypeSchema {
+  collectionName: 'legislations';
+  info: {
+    displayName: 'Legislation';
+    pluralName: 'legislations';
+    singularName: 'legislation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    link: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::legislation.legislation'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMapMap extends Struct.CollectionTypeSchema {
   collectionName: 'maps';
   info: {
@@ -866,6 +918,38 @@ export interface ApiMapMap extends Struct.CollectionTypeSchema {
       'api::region-list.region-list'
     >;
     service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMediaKitUserMediaKitUser
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'media_kit_users';
+  info: {
+    displayName: 'Media kit user';
+    pluralName: 'media-kit-users';
+    singularName: 'media-kit-user';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::media-kit-user.media-kit-user'
+    > &
+      Schema.Attribute.Private;
+    media_kit: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1268,7 +1352,6 @@ export interface ApiUserMessageUserMessage extends Struct.CollectionTypeSchema {
       'api::user-message.user-message'
     > &
       Schema.Attribute.Private;
-    media_kit: Schema.Attribute.String;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
@@ -1851,7 +1934,9 @@ declare module '@strapi/strapi' {
       'api::counter.counter': ApiCounterCounter;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::journal.journal': ApiJournalJournal;
+      'api::legislation.legislation': ApiLegislationLegislation;
       'api::map.map': ApiMapMap;
+      'api::media-kit-user.media-kit-user': ApiMediaKitUserMediaKitUser;
       'api::media-kit.media-kit': ApiMediaKitMediaKit;
       'api::new.new': ApiNewNew;
       'api::partner-logo.partner-logo': ApiPartnerLogoPartnerLogo;
